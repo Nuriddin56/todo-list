@@ -1,6 +1,5 @@
 import React from "react";
-import { FaPlus } from "react-icons/fa";
-import { toast } from "react-toastify";
+import { GoCheck } from "react-icons/go";
 import { v4 as uuidv4 } from "uuid";
 
 function Form({ setTodos }) {
@@ -10,7 +9,6 @@ function Form({ setTodos }) {
       id: uuidv4(),
       isComplated: false,
     };
-
     const formData = new FormData(e.target);
 
     todo.text = formData.get("todo-text");
@@ -21,9 +19,6 @@ function Form({ setTodos }) {
 
         return [todo, ...prev];
       });
-      toast.success("Yangi todo qo'shildi");
-    } else {
-      toast.warning("Text yozish shart!");
     }
 
     e.target.reset();
@@ -31,7 +26,7 @@ function Form({ setTodos }) {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit} className="flex justify-center gap-2">
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="todo-text"
@@ -40,7 +35,7 @@ function Form({ setTodos }) {
           className="input"
         />
         <button className="btn btn-primary text-2xl">
-          <FaPlus />
+          <GoCheck />
         </button>
       </form>
     </div>

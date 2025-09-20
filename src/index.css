@@ -1,10 +1,2 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: light --defalut, dark --prefersdark;
-}
-
-@layer utilities {
-  .container {
-    @apply mx-auto;
-  }
-}
+@plugin "daisyui";

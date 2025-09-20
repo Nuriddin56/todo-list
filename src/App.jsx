@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "./components/Navbar";
 import Form from "./components/Form";
 import List from "./components/List";
 
@@ -10,8 +9,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <main className="flex flex-col gap-8 py-10">
+      <main>
         <Form setTodos={setTodos} />
         <List todos={todos} setTodos={setTodos} />
       </main>
